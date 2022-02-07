@@ -1,5 +1,6 @@
-import { LitElement } from "lit";
+import type { LitElement } from "lit";
 
 declare global {
-  export type LitMixin<T = {}> = new (...args: any[]) => T & LitElement;
+  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+  export type LitMixin<T = unknown> = new (...args: any[]) => T & LitElement;
 }

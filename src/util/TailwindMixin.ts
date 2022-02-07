@@ -1,4 +1,4 @@
-export const TW = <T extends LitMixin>(superClass: T) =>
+export const TW = <T extends LitMixin>(superClass: T): T =>
   class extends superClass {
     connectedCallback() {
       super.connectedCallback();
@@ -8,6 +8,6 @@ export const TW = <T extends LitMixin>(superClass: T) =>
       link.type = "text/css";
       link.href = new URL("../styles/main.css", import.meta.url).href;
 
-      this.shadowRoot.appendChild(link);
+      this.shadowRoot.append(link);
     }
   };
