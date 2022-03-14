@@ -4,7 +4,6 @@ import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import "../components/HelloWorld";
-import "../styles/main.css";
 import { TW } from "../util/TailwindMixin";
 
 @customElement("x-index-page")

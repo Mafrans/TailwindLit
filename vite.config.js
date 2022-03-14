@@ -1,4 +1,3 @@
 import { defineConfig } from 'vite';
 
-defineConfig({
-});
+export default defineConfig({});
