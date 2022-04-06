@@ -3,11 +3,8 @@ export const TW = <T extends LitMixin>(superClass: T): T =>
     connectedCallback() {
       super.connectedCallback();
 
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = new URL("../styles/main.css", import.meta.url).href;
-
-      this.shadowRoot.append(link);
+      document.head.querySelectorAll("link[rel='stylesheet']").forEach((link) => {
+        this.shadowRoot.append(link.cloneNode());
+      });
     }
   };
