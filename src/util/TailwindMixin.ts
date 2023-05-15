@@ -30,8 +30,4 @@ export const TW = <T extends LitMixin>(superClass: T): T =>
         this.shadowRoot.append(Mixin.styleElement.cloneNode());
       }
     }
-
-    async connectedCallback() {
-      super.connectedCallback();
-    }
   };
