@@ -1,13 +1,10 @@
-import stylesheetURL from "../styles/main.css?url";
+import css from "../styles/main.css?inline";
 
 export const TW = <T extends LitMixin>(superClass: T): T =>
   class extends superClass {
-    connectedCallback() {
+    async connectedCallback() {
       super.connectedCallback();
-
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = stylesheetURL;
-      this.shadowRoot.append(link);
+      const stylesheet = await new CSSStyleSheet().replace(css);
+      this.shadowRoot.adoptedStyleSheets.push(stylesheet);
     }
   };
